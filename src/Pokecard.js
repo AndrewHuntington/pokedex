@@ -5,13 +5,24 @@ class Pokecard extends Component {
   render() {
     const pokemon = this.props;
     const POKE_API =
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
-    const image = `${POKE_API}${pokemon.id}.png`;
+      "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/";
+    // const POKE_API =
+    //   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
+
+    // Force ID to always be 3 digits (padded by zeros)
+    function convertID(id) {
+      if (id <= 999) return `00${id}`.slice(-3);
+
+      return id;
+    }
+    const image = `${POKE_API}${convertID(pokemon.id)}.png`;
 
     return (
       <div className="Pokecard">
         <p className="Pokecard-name">{pokemon.name}</p>
-        <img src={image} alt={pokemon.name} />
+        <div className="Pokecard-image">
+          <img src={image} alt={pokemon.name} />
+        </div>
         <p className="Pokecard-type">Type: {pokemon.type}</p>
         <p className="Pokecard-exp">EXP: {pokemon.exp}</p>
       </div>

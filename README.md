@@ -6,4 +6,4 @@ A simple "Pokedex" app made with React.
 
 To practice using React components and properties.
 
-"Inspired" by Colt Steele's Pokedex Project from _The Modern React Bootcamp_.
+"Inspired" by Colt Steele's Pokedex Project from _The Modern React Bootcamp_. However, the code is all my own.
