@@ -1,6 +1,14 @@
-.Pokedex {
+.Pokedex-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   max-width: 1100px;
+}
+
+.Pokedex-win {
+  color: green;
+}
+
+.Pokedex-lose {
+  color: red;
 }
