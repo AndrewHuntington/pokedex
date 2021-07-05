@@ -10,12 +10,12 @@ class Pokedex extends Component {
     const monsters = pokemon.map((p) => (
       <Pokecard id={p.id} name={p.name} type={p.type} exp={p.base_experience} />
     ));
-    const winMsg = isWinner ? "You win!" : "You lose!";
+    const winMsg = isWinner ? "This hand wins!" : "This hand loses!";
     const msgClass = isWinner ? "Pokedex-win" : "Pokedex-lose";
 
     return (
       <div className="Pokedex">
-        <h1 className={msgClass}>{winMsg}</h1>
+        <h1 className={msgClass}>{winMsg.toUpperCase()}</h1>
         <h4>Your total EXP: {totalExp}</h4>
         <div className="Pokedex-cards">{monsters}</div>
       </div>

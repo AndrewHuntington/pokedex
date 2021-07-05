@@ -18,13 +18,15 @@ class Pokecard extends Component {
     const image = `${POKE_API}${convertID(pokemon.id)}.png`;
 
     return (
-      <div className="Pokecard">
-        <p className="Pokecard-name">{pokemon.name}</p>
-        <div className="Pokecard-image">
-          <img src={image} alt={pokemon.name} />
+      <div className="Pokecard animate__animated animate__backInLeft">
+        <div className="Pokecard-container animate__animated animate__flip animate__delay-1s">
+          <p className="Pokecard-name">{pokemon.name}</p>
+          <div className="Pokecard-image">
+            <img src={image} alt={pokemon.name} />
+          </div>
+          <p className="Pokecard-type">Type: {pokemon.type}</p>
+          <p className="Pokecard-exp">EXP: {pokemon.exp}</p>
         </div>
-        <p className="Pokecard-type">Type: {pokemon.type}</p>
-        <p className="Pokecard-exp">EXP: {pokemon.exp}</p>
       </div>
     );
   }
